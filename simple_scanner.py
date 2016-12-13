@@ -6,13 +6,13 @@ def scan(targetIP):
 	port = []
 	for i in range(20, 1025): 
         	try:
-                    print '[!] Tentando se conectar a porta ',str(i)
+                 #   print '[!] Tentando se conectar a porta ',str(i)
                     s = socket(AF_INET, SOCK_STREAM)
                     result = s.connect_ex((targetIP, i))
         
                     if result == 0:
                         print "[+] Porta "+str(i)+" aberta!"
-                        port.append("[+] Porta "+str(i)+"aberta!")
+                        port.append("[+] Porta "+str(i)+" aberta!")
                         
                     s.close()       
 
@@ -23,7 +23,7 @@ def scan(targetIP):
 	return port
 
 def showReport(port):
-	if port not null:
+	if port != None:
 		for p in port:
 			print p	
 
